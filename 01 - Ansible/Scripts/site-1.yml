@@ -5,15 +5,15 @@
   become: yes
   tasks:
     - name: Adding Banner
-	  ios_command: 
-	    commands: 
-		  - conf t
-		  - banner motd *
-		  - "## ANSIBLE WAS HERE ##"
-		  - *
-		  - end
-      tags:
-	    - banner
+        ios_command: 
+          commands: 
+            - conf t
+            - banner motd *
+            - "## ANSIBLE WAS HERE ##"
+            - *
+            - end
+        tags:
+	  - banner
 	
 	- name: Assigning IP Addresses
 	  ios_command:
