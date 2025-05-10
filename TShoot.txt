@@ -1,6 +1,11 @@
 ## SSH
 ssh username@ip
 
+## Run Semaphore
+http://ip-of-your-vm:3000
+
+# IF Semaphore does not start
+systemctl start semaphore
 
 ## REMOVE SSH 
 ssh-keygen -f "/root/.ssh/known_hosts" -R "10._.1.4"
