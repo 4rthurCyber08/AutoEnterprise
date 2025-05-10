@@ -1,0 +1,24 @@
+---
+- name: AddLoop
+  hosts: SampleNode
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: "Add Loop 100"
+	  ios_command:
+	    commands:
+		  - conf t
+		  - int loopback 100
+		  - ip add 100.100.1.1 255.255.255.255
+		  - end
+	  tags:
+	    - loop100
+    - name: "Add Loop 200"
+	  ios_command:
+	    commands:
+		  - conf t
+		  - int loopback 200
+		  - ip add 200.200.2.2 255.255.255.255
+		  - end
+      tags:
+	    - loop200
